@@ -1,0 +1,104 @@
+/* Scroll container */
+.scrollContainer {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  height: 100%;
+  padding-top: var(--ui-kit-space-2);
+  padding-right: var(--ui-kit-space-2);
+  padding-bottom: var(--ui-kit-space-2);
+
+  /* for firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--ui-kit-color-typography-quaternary) transparent;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  position: absolute;
+  width: var(--ui-kit-base-unit);
+  height: 0;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+  width: var(--ui-kit-base-unit);
+  margin-top: var(--ui-kit-space-1);
+  margin-bottom: var(--ui-kit-space-1);
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  border-radius: var(--ui-kit-border-radius);
+  background: var(--ui-kit-color-typography-quaternary);
+  visibility: hidden;
+}
+
+.scrollContainer:hover::-webkit-scrollbar-thumb,
+.scrollContainer:focus::-webkit-scrollbar-thumb,
+.scrollContainer:focus-within::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+.imageCompareContainer {
+  width: 100% !important;
+  border-radius: 8px !important;
+  background-color: var(--ui-kit-color-neutral-low) !important;
+  padding: var(--ui-kit-space-2) !important;
+}
+
+.compareImage {
+  object-fit: contain !important;
+  width: 100% !important;
+  max-height: 200px !important;
+  border-radius: 8px !important;
+  background-color: var(--ui-kit-color-neutral-low) !important;
+  border: 1px solid var(--ui-kit-color-border-subtle) !important;
+}
+
+.originImage {
+  object-fit: contain !important;
+  width: 100% !important;
+  max-height: 200px !important;
+  border-radius: 8px !important;
+  background-color: var(--ui-kit-color-neutral-low) !important;
+}
+
+.flippedImage {
+  object-fit: contain !important;
+  width: 100% !important;
+  max-height: 200px !important;
+  border-radius: 8px !important;
+  background-color: var(--ui-kit-color-neutral-low) !important;
+  transition: transform 0.3s ease;
+}
+
+.mirrorPreview {
+  position: relative;
+  width: 100%;
+  background-color: var(--ui-kit-color-neutral-low);
+  border-radius: 8px;
+  padding: var(--ui-kit-space-2);
+  border: 1px solid var(--ui-kit-color-border-subtle);
+}
+
+.mirrorPreview img {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.flippedImageContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.flippedImageContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1));
+  pointer-events: none;
+  border-radius: 8px;
+}
